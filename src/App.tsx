@@ -1,7 +1,11 @@
+import LastOrder from "./components/LastOrder";
+
 function App() {
   return (
     <div className="flex min-h-screen flex-col justify-between">
-      <div className="px-5"></div>
+      <div className="mx-auto mt-20">
+        <LastOrder />
+      </div>
     </div>
   );
 }

@@ -23,8 +23,10 @@ export default function Calendar() {
   return (
     <div>
       <div className="flex gap-[10px] items-center">
-        <CalendarIcon />
-        <p className="font-Inter text-[14px] font-medium">
+        <button>
+          <CalendarIcon />
+        </button>
+        <p className="font-Inter text-[14px] text-[#26282C] font-medium">
           {month} {day}, {year}
         </p>
       </div>
