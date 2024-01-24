@@ -22,7 +22,7 @@ export default function TopPlatforms() {
     },
     {
       title: "XStore",
-      valueNumber: 2500000,
+      valueNumber: 500000,
       valueString: " $2,500,000",
       bgcolor: "#ED544E",
     },

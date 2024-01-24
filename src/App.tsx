@@ -1,10 +1,10 @@
-import TopPlatforms from "./components/TopPlatforms";
+import SalesTrend from "./components/SalesTrend";
 
 function App() {
   return (
     <div className="flex min-h-screen flex-col justify-between  bg-[#F7F8FA]">
       <div className="mx-auto mt-20">
-        <TopPlatforms />
+        <SalesTrend />
       </div>
     </div>
   );

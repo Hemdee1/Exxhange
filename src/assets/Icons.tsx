@@ -579,3 +579,43 @@ export const ViewIcon = () => (
     />
   </svg>
 );
+
+export const LineIcon = () => (
+  <svg
+    width="697"
+    height="2"
+    viewBox="0 0 697 2"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M1 0.722168H696.413H1Z"
+      fill="white"
+    />
+    <path
+      d="M1 0.722168H696.413"
+      stroke="#EAEAEA"
+      stroke-linecap="round"
+      stroke-dasharray="4 4"
+    />
+  </svg>
+);
+
+export const MarkerIcon = () => (
+  <svg
+    width="80"
+    height="32"
+    viewBox="0 0 80 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M0 5C0 2.23858 2.23858 0 5 0H75C77.7614 0 80 2.23858 80 5V21C80 23.7614 77.7614 26 75 26L46 26L40 31.9771L34 26L5 26C2.23858 26 0 23.7614 0 21V5Z"
+      fill="#090C2C"
+    />
+  </svg>
+);
