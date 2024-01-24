@@ -87,14 +87,14 @@ export default function LastOrder() {
   ];
   return (
     <div>
-      <div className="w-[806px] px-[20px] h-[422px] border border-[#EDF2F7] bg-white rounded-[14px] ">
+      <div className="w-[806px] px-[20px] h-[422px] border border-[#EDF2F7] bg-white rounded-[14px]">
         <div className=" flex justify-between mt-[18px] ">
           <span className="block text-[18px] font-semibold text-[#26282C] font-PlusJakarta">
             Last Orders
           </span>
-          <span className="block text-[#34CAA5] text-[18px] font-PlusJakarta font-medium">
+          <button className=" text-[#34CAA5] text-[18px] font-PlusJakarta font-medium">
             See All
-          </span>
+          </button>
         </div>
 
         <div className="flex justify-between mt-[14px] ">
@@ -116,35 +116,37 @@ export default function LastOrder() {
         </div>
 
         <div>
-          {data.map((data, i) => (
-            <div key={i} className="flex  justify-between mt-[33px] ">
-              <div className="flex items-center w-[216px] gap-[10px]">
-                <img src={data.images} alt="avatar" />
-                <span className="block text-[16px]  h-[] font-medium text-[#3A3F51] font-PlusJakarta">
-                  {data.name}
+          <div className="w-full h-[350px] overflow-scroll scrollbar-hide">
+            {data.map((data, i) => (
+              <div key={i} className="flex  justify-between mt-[33px] ">
+                <div className="flex items-center w-[216px] gap-[10px]">
+                  <img src={data.images} alt="avatar" />
+                  <span className="block text-[16px]  h-[] font-medium text-[#3A3F51] font-PlusJakarta">
+                    {data.name}
+                  </span>
+                </div>
+                <span className="block text-[16px] w-[116px] font-medium text-[#9CA4AB] font-PlusJakarta">
+                  {data.date}
                 </span>
+                <span className="block text-[16px] font-medium w-[120px] text-[#0D062D)] font-PlusJakarta">
+                  {data.amount}
+                </span>
+                <span
+                  className={`${
+                    data.status == "Paid" ? "text-[#34CAA5]" : "text-[#ED544E]"
+                  } block text-[16px] font-medium w-[95px]  font-PlusJakarta`}
+                >
+                  {data.status}
+                </span>
+                <div className=" w-[80px] flex gap-[3px] items-center">
+                  <ViewIcon />
+                  <p className="text-[#0D062D] text-[16px] font-PlusJakarta font-medium">
+                    {data.invoice}
+                  </p>
+                </div>
               </div>
-              <span className="block text-[16px] w-[116px] font-medium text-[#9CA4AB] font-PlusJakarta">
-                {data.date}
-              </span>
-              <span className="block text-[16px] font-medium w-[120px] text-[#0D062D)] font-PlusJakarta">
-                {data.amount}
-              </span>
-              <span
-                className={`${
-                  data.status == "Paid" ? "text-[#34CAA5]" : "text-[#ED544E]"
-                } block text-[16px] font-medium w-[95px]  font-PlusJakarta`}
-              >
-                {data.status}
-              </span>
-              <div className=" w-[80px] flex gap-[3px] items-center">
-                <ViewIcon />
-                <p className="text-[#0D062D] text-[16px] font-PlusJakarta font-medium">
-                  {data.invoice}
-                </p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
