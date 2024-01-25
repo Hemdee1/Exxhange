@@ -1,10 +1,10 @@
-import SalesTrend from "./components/SalesTrend";
+import TotalOrder from "./components/TotalOrder";
 
 function App() {
   return (
     <div className="flex min-h-screen flex-col justify-between  bg-[#F7F8FA]">
       <div className="mx-auto mt-20">
-        <SalesTrend />
+        <TotalOrder />
       </div>
     </div>
   );

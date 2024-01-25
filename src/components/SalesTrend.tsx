@@ -32,8 +32,6 @@ export default function SalesTrend() {
     return (value / 60) * 100;
   };
 
-  console.log(getHeight(17.0));
-
   return (
     <div className="w-[806px] h-[374px] bg-white border border-[#EDF2F7] px-[20px] rounded-[14px]">
       <div className="mt-[21.5px] flex justify-between mb-[21.5px]">
