@@ -35,7 +35,7 @@ export default function ProgressBar({
         <div className="text-[18px] font-semibold font-PlusJakarta text-[#22242C] mb-[17px]">
           {title}
         </div>
-        <div className="block w-[452px] h-[12px] bg-[#F5F5F5] rounded-[40px] ">
+        <div className="block w-[100%] h-[12px] bg-[#F5F5F5] rounded-[40px] ">
           <span style={fillerStyles}></span>
         </div>
         <div className="flex justify-between items-center mt-[16px]">

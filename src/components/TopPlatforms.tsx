@@ -29,27 +29,25 @@ export default function TopPlatforms() {
   ];
 
   return (
-    <div>
-      <div className="w-[488px] h-[542px] border px-[20px] fixed  border-[#EDF2F7] bg-white rounded-[14px]">
-        <div className=" flex justify-between mt-[18px] mb-2 ">
-          <span className="block text-[18px] font-semibold text-[#26282C] font-PlusJakarta">
-            Top Platform
-          </span>
-          <button className=" text-[#34CAA5] text-[18px] font-PlusJakarta font-medium">
-            See All
-          </button>
-        </div>
-        <div className="h-[448px] overflow-scroll scrollbar-hide">
-          {data.map((data, i) => (
-            <ProgressBar
-              bgcolor={data.bgcolor}
-              title={data.title}
-              valueNumber={data.valueNumber}
-              valueString={data.valueString}
-              key={i}
-            />
-          ))}
-        </div>
+    <div className="w-full h-[542px] border px-[20px]  border-[#EDF2F7] bg-white rounded-[14px]">
+      <div className=" flex justify-between mt-[18px] mb-2 ">
+        <span className="block text-[18px] font-semibold text-[#26282C] font-PlusJakarta">
+          Top Platform
+        </span>
+        <button className=" text-[#34CAA5] text-[18px] font-PlusJakarta font-medium">
+          See All
+        </button>
+      </div>
+      <div className="h-fit">
+        {data.map((data, i) => (
+          <ProgressBar
+            bgcolor={data.bgcolor}
+            title={data.title}
+            valueNumber={data.valueNumber}
+            valueString={data.valueString}
+            key={i}
+          />
+        ))}
       </div>
     </div>
   );

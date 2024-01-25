@@ -43,51 +43,10 @@ export default function LastOrder() {
       status: "Paid",
       invoice: "View",
     },
-    {
-      images: "./images/1.png",
-      name: "Marcus Bergson",
-      date: "Nov 15, 2023",
-      amount: "$80,000",
-      status: "Paid",
-      invoice: "View",
-    },
-    {
-      images: "./images/2.png",
-      name: "Jaydon Vaccaro",
-      date: "Nov 15, 2023",
-      amount: "$150,000",
-      status: "Refund",
-      invoice: "View",
-    },
-    {
-      images: "./images/3.png",
-      name: "Corey Schleifer",
-      date: "Nov 14, 2023",
-      amount: "$87,000",
-      status: "Paid",
-      invoice: "View",
-    },
-    {
-      images: "./images/4.png",
-      name: "Cooper Press",
-      date: "Nov 14, 2023",
-      amount: "$100,000",
-      status: "Refund",
-      invoice: "View",
-    },
-
-    {
-      images: "./images/5.png",
-      name: "Phillip Lubin",
-      date: "Nov 13, 2023",
-      amount: "$78,000",
-      status: "Paid",
-      invoice: "View",
-    },
   ];
   return (
     <div>
-      <div className="w-[806px] px-[20px] h-[422px] border border-[#EDF2F7] bg-white rounded-[14px]">
+      <div className="w-full h-fit pb-[31px] px-[20px]  border border-[#EDF2F7] bg-white rounded-[14px]">
         <div className=" flex justify-between mt-[18px] ">
           <span className="block text-[18px] font-semibold text-[#26282C] font-PlusJakarta">
             Last Orders
@@ -116,9 +75,12 @@ export default function LastOrder() {
         </div>
 
         <div>
-          <div className="w-full h-[350px] overflow-scroll scrollbar-hide">
+          <div className="w-full h-fit">
             {data.map((data, i) => (
-              <div key={i} className="flex  justify-between mt-[33px] ">
+              <div
+                key={i}
+                className="flex border-t pt-[12px] border-[#EDF2F6] justify-between mt-[33px] "
+              >
                 <div className="flex items-center w-[216px] gap-[10px]">
                   <img src={data.images} alt="avatar" />
                   <span className="block text-[16px]  h-[] font-medium text-[#3A3F51] font-PlusJakarta">

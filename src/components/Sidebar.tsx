@@ -13,11 +13,12 @@ import {
   SideIcon,
   TrendUpIcon,
 } from "../assets/Icons";
+import Theme from "../utils/Theme";
 
 export default function Sidebar() {
   const [select, setSelect] = useState(1);
   return (
-    <div className="mx-auto fixed">
+    <div className="fixed left-0 top-0 z-20">
       <div className="h-screen w-[80px] mt-[20px] bg-[#F7F8FA] border-r border-[#E5EAEF] flex flex-col justify-between">
         <div className="flex flex-col gap-[32px] justify-center items-center">
           <button>
@@ -89,31 +90,13 @@ export default function Sidebar() {
             </div>
           </div>
 
-          <div className="flex justify-end gap-[24px] w-full">
-            <button
-              onClick={() => {
-                setSelect(6);
-              }}
-            >
-              <BrightnessIcon />
-            </button>
-            <div>
-              <SideIcon color={`${select == 6 ? "#0D062D" : "#F7F8FA"}`} />
-            </div>
-          </div>
-
-          <div className="flex justify-end gap-[24px] w-full">
-            <button
-              onClick={() => {
-                setSelect(7);
-              }}
-            >
-              <MoonIcon />
-            </button>
-            <div>
-              <SideIcon color={`${select == 7 ? "#0D062D" : "#F7F8FA"}`} />
-            </div>
-          </div>
+          <button
+            onClick={() => {
+              setSelect(7);
+            }}
+          >
+            <Theme />
+          </button>
         </div>
 
         <div

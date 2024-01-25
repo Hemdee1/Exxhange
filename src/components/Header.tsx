@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
 export default function Header() {
   return (
     <div>
-      <div className="w-screen h-[88px] bg-[#FAFAFA] border-b border-[#E5EAEF] px-[20px] flex items-center justify-between pl-[100px]">
+      <div className="w-full fixed left-0 top-0 z-10 h-[88px] bg-[#FAFAFA] border-b border-[#E5EAEF] px-[20px] flex items-center justify-between pl-[100px]">
         <p className="font-PlusJakarta text-[20px] font-semibold text-[#26282C] leading-[28px]">
           Dashboard
         </p>

@@ -1,5 +1,5 @@
 import React from "react";
-import { DropDownIcon, LineIcon } from "../assets/Icons";
+import { DropDownIcon } from "../assets/Icons";
 import Marker from "../utils/Marker";
 
 export default function SalesTrend() {
@@ -33,7 +33,7 @@ export default function SalesTrend() {
   };
 
   return (
-    <div className="w-[806px] h-[374px] bg-white border border-[#EDF2F7] px-[20px] rounded-[14px]">
+    <div className="w-full h-[374px] bg-white border border-[#EDF2F7] px-[20px] rounded-[14px]">
       <div className="mt-[21.5px] flex justify-between mb-[21.5px]">
         <p className="text-[18px] font-semibold font-PlusJakarta text-[#26282C]">
           Sales Trends
@@ -50,18 +50,16 @@ export default function SalesTrend() {
           </div>
         </div>
       </div>
-      <div className="h-[255px] w-[719px] flex flex-col justify-between relative">
+      <div className="h-[255px] flex flex-col justify-between relative">
         {YAxis.map((data, i) => (
           <div key={i} className="flex gap-[23px] items-center">
             <p className="text-[12px] font-semibold text-[#B7B0B0] font-PlusJakarta">
               {data}
             </p>
-            <span className="block">
-              <LineIcon />
-            </span>
+            <span className="block border-dashed border border-[#EAEAEA] w-[100%]"></span>
           </div>
         ))}
-        <div className="absolute bottom-[9px] h-[100%] flex items-end gap-[30px] w-full left-[70px]">
+        <div className="absolute bottom-[9px] h-[100%] flex items-end justify-between gap-[10px] w-[93%] left-[35px] xl:left-[56px]">
           {XAxis.map((data, i) => (
             <span
               key={i}
