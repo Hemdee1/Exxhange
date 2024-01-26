@@ -1,4 +1,3 @@
-import React from "react";
 import StockBox from "../utils/StockBox";
 import { CoinIcon } from "../assets/Icons";
 

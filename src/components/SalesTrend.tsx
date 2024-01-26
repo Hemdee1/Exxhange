@@ -1,4 +1,3 @@
-import React from "react";
 import { DropDownIcon } from "../assets/Icons";
 import Marker from "../utils/Marker";
 

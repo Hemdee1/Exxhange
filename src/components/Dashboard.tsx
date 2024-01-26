@@ -1,4 +1,3 @@
-import React from "react";
 import HomeContainer from "./HomeContainer";
 import SalesTrend from "./SalesTrend";
 import TotalOrder from "./TotalOrder";
@@ -7,13 +6,10 @@ import AverageSales from "./AverageSales";
 import TotalIncome from "./TotalIncome";
 import LastOrder from "./LastOrder";
 import TopPlatforms from "./TopPlatforms";
-import handleWindowSize from "../utils/HandleWindowSize";
 
 export default function Dashboard() {
-  const { Height, Width } = handleWindowSize();
   return (
     <div>
-      {Number(Width) <= 1024}
       <HomeContainer>
         <div className="w-full">
           <div className="flex-col lg:flex-row lg:h-[374px] gap-[20px] flex">

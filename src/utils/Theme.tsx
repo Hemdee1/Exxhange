@@ -1,4 +1,3 @@
-import React from "react";
 import { LightIcon, MoonIcon } from "../assets/Icons";
 
 export default function Theme() {
