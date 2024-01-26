@@ -56,7 +56,7 @@ export default function LastOrder() {
           </button>
         </div>
         <div className="overflow-x-scroll scrollbar-hide">
-          <div className="flex justify-between w-[800px] mt-[14px] ">
+          <div className="flex justify-between  w-[800px] sm:w-full mt-[14px] ">
             <span className="block text-[16px] w-[216px] h-[] font-medium text-[#9CA4AB] font-PlusJakarta">
               Name
             </span>
@@ -75,7 +75,7 @@ export default function LastOrder() {
           </div>
 
           <div>
-            <div className="w-[800px] h-fit">
+            <div className="w-[800px] sm:w-full h-fit">
               {data.map((data, i) => (
                 <div
                   key={i}

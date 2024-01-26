@@ -28,10 +28,10 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="flex flex-col lg:flex-row gap-[26px] mt-[20px] mb-[100px] ">
-            <div className="lg:w-[55.5%] sm:w-full overflow-x-scroll scrollbar-hide sm:overflow-visible 2xl:w-[70%]">
+            <div className="overflow-x-scroll scrollbar-hide sm:overflow-x-auto w-full">
               <LastOrder />
             </div>
-            <div className="xl:w-[500px] w-full lg:w-[500px]">
+            <div className="min-w-[400px] min-[1100px]:min-w-[493px]">
               <TopPlatforms />
             </div>
           </div>

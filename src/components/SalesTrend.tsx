@@ -33,7 +33,7 @@ export default function SalesTrend() {
 
   return (
     <div className="sm:w-full   h-[374px] bg-white border  border-[#EDF2F7] px-[20px] rounded-[14px] ">
-      <div className="mt-[21.5px] flex justify-between mb-[21.5px]">
+      <div className="mt-[21.5px] flex justify-between">
         <p className="text-[18px] font-semibold font-PlusJakarta text-[#26282C]">
           Sales Trends
         </p>
@@ -49,8 +49,8 @@ export default function SalesTrend() {
           </div>
         </div>
       </div>
-      <div className="overflow-x-scroll w-full scrollbar-hide">
-        <div className="h-[255px] w-[800px] sm:w-full  flex flex-col justify-between relative">
+      <div className="overflow-x-scroll h-full pt-5 w-full scrollbar-hide">
+        <div className="h-[255px] w-[800px] sm:w-[91%] flex flex-col justify-between relative">
           {YAxis.map((data, i) => (
             <div key={i} className="flex gap-[23px] items-center">
               <p className="text-[12px] font-semibold text-[#B7B0B0] font-PlusJakarta">
@@ -59,7 +59,7 @@ export default function SalesTrend() {
               <span className="block border-dashed border border-[#EAEAEA] w-[100%]"></span>
             </div>
           ))}
-          <div className="absolute bottom-[9px] h-[100%] flex items-end justify-between gap-[10px] w-[93%] left-[50px] lg:left-[35px] xl:left-[56px]">
+          <div className="absolute sm:w-full bottom-[9px] h-[100%] flex items-end justify-between gap-[10px] w-[93%] left-[50px] lg:left-[35px] xl:left-[56px]">
             {XAxis.map((data, i) => (
               <span
                 key={i}
