@@ -13,11 +13,11 @@ export default function Dashboard() {
       <HomeContainer>
         <div className="w-full">
           <div className="flex-col lg:flex-row lg:h-[374px] gap-[20px] flex">
-            <div className="sm:w-full overflow-x-scroll scrollbar-hide sm:overflow-visible lg:w-[60%] 2xl:w-[70%] ">
+            <div className="sm:w-full overflow-x-scroll scrollbar-hide sm:overflow-visible  ">
               <SalesTrend />
             </div>
             <div className="flex flex-col w-full lg:w-[500px] gap-[16px]">
-              <div className="flex sm:flex-row flex-col gap-[16px]">
+              <div className="flex sm:flex-row flex-col gap-[16px] w-full">
                 <TotalOrder />
                 <TotalRefund />
               </div>
@@ -31,7 +31,7 @@ export default function Dashboard() {
             <div className="overflow-x-scroll scrollbar-hide sm:overflow-x-auto w-full">
               <LastOrder />
             </div>
-            <div className="min-w-[400px] min-[1100px]:min-w-[493px]">
+            <div className="min-w-[400px] min-[1100px]:min-w-[500px]">
               <TopPlatforms />
             </div>
           </div>
