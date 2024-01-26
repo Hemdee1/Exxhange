@@ -1,5 +1,3 @@
-import React from "react";
-
 import StockBox from "../utils/StockBox";
 import { BoxTickIcon } from "../assets/Icons";
 
