@@ -33,7 +33,7 @@ export default function SalesTrend() {
   };
 
   return (
-    <div className="sm:w-full w-[1000px] h-[374px] bg-white border  border-[#EDF2F7] px-[20px] rounded-[14px] ">
+    <div className="sm:w-full   h-[374px] bg-white border  border-[#EDF2F7] px-[20px] rounded-[14px] ">
       <div className="mt-[21.5px] flex justify-between mb-[21.5px]">
         <p className="text-[18px] font-semibold font-PlusJakarta text-[#26282C]">
           Sales Trends
@@ -50,30 +50,32 @@ export default function SalesTrend() {
           </div>
         </div>
       </div>
-      <div className="h-[255px] flex flex-col justify-between relative">
-        {YAxis.map((data, i) => (
-          <div key={i} className="flex gap-[23px] items-center">
-            <p className="text-[12px] font-semibold text-[#B7B0B0] font-PlusJakarta">
-              {data}
-            </p>
-            <span className="block border-dashed border border-[#EAEAEA] w-[100%]"></span>
-          </div>
-        ))}
-        <div className="absolute bottom-[9px] h-[100%] flex items-end justify-between gap-[10px] w-[93%] left-[50px] lg:left-[35px] xl:left-[56px]">
-          {XAxis.map((data, i) => (
-            <span
-              key={i}
-              style={{ height: ` ${getHeight(data.value)}%` }}
-              className="block group relative h-[28%] w-[30px] rounded-t-full transition-all duration-500 hover:bg-gradient-to-t hover:from-white hover:to-[#34CAA5] bg-gradient-to-t from-[#34CAA51A] to-[#34CAA51A]"
-            >
-              <div className="absolute -top-[39px] group-hover:opacity-100 transition-all duration-500 -left-[27px] opacity-0">
-                <Marker value={data.value} />
-              </div>
-              <div className="absolute -bottom-[30px] text-[14px] font-normal font-PlusJakarta text-[#B2ABAB]">
-                {data.month}
-              </div>
-            </span>
+      <div className="overflow-x-scroll scrollbar-hide">
+        <div className="h-[255px] w-[800px]  flex flex-col justify-between relative">
+          {YAxis.map((data, i) => (
+            <div key={i} className="flex gap-[23px] items-center">
+              <p className="text-[12px] font-semibold text-[#B7B0B0] font-PlusJakarta">
+                {data}
+              </p>
+              <span className="block border-dashed border border-[#EAEAEA] w-[100%]"></span>
+            </div>
           ))}
+          <div className="absolute bottom-[9px] h-[100%] flex items-end justify-between gap-[10px] w-[93%] left-[50px] lg:left-[35px] xl:left-[56px]">
+            {XAxis.map((data, i) => (
+              <span
+                key={i}
+                style={{ height: ` ${getHeight(data.value)}%` }}
+                className="block group relative h-[28%] w-[30px] rounded-t-full transition-all duration-500 hover:bg-gradient-to-t hover:from-white hover:to-[#34CAA5] bg-gradient-to-t from-[#34CAA51A] to-[#34CAA51A]"
+              >
+                <div className="absolute -top-[39px] group-hover:opacity-100 transition-all duration-500 -left-[27px] opacity-0">
+                  <Marker value={data.value} />
+                </div>
+                <div className="absolute -bottom-[30px] text-[14px] font-normal font-PlusJakarta text-[#B2ABAB]">
+                  {data.month}
+                </div>
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>

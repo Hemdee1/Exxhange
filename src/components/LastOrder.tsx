@@ -46,7 +46,7 @@ export default function LastOrder() {
   ];
   return (
     <div>
-      <div className="sm:w-full w-[800px] h-fit pb-[31px] px-[20px]  border border-[#EDF2F7] bg-white rounded-[14px]">
+      <div className="sm:w-full  h-fit pb-[31px] px-[20px]  border border-[#EDF2F7] bg-white rounded-[14px]">
         <div className=" flex justify-between mt-[18px] ">
           <span className="block text-[18px] font-semibold text-[#26282C] font-PlusJakarta">
             Last Orders
@@ -55,59 +55,62 @@ export default function LastOrder() {
             See All
           </button>
         </div>
+        <div className="overflow-x-scroll scrollbar-hide">
+          <div className="flex justify-between w-[800px] mt-[14px] ">
+            <span className="block text-[16px] w-[216px] h-[] font-medium text-[#9CA4AB] font-PlusJakarta">
+              Name
+            </span>
+            <span className="block text-[16px] w-[116px] font-medium text-[#9CA4AB] font-PlusJakarta">
+              Date
+            </span>
+            <span className="block text-[16px] font-medium w-[120px] text-[#9CA4AB] font-PlusJakarta">
+              Ammount
+            </span>
+            <span className="block text-[16px] font-medium w-[95px] text-[#9CA4AB] font-PlusJakarta">
+              Status
+            </span>
+            <span className="block text-[16px] font-medium text-[#9CA4AB] w-[80px] font-PlusJakarta ml-[]">
+              Invoice
+            </span>
+          </div>
 
-        <div className="flex justify-between mt-[14px] ">
-          <span className="block text-[16px] w-[216px] h-[] font-medium text-[#9CA4AB] font-PlusJakarta">
-            Name
-          </span>
-          <span className="block text-[16px] w-[116px] font-medium text-[#9CA4AB] font-PlusJakarta">
-            Date
-          </span>
-          <span className="block text-[16px] font-medium w-[120px] text-[#9CA4AB] font-PlusJakarta">
-            Ammount
-          </span>
-          <span className="block text-[16px] font-medium w-[95px] text-[#9CA4AB] font-PlusJakarta">
-            Status
-          </span>
-          <span className="block text-[16px] font-medium text-[#9CA4AB] w-[80px] font-PlusJakarta ml-[]">
-            Invoice
-          </span>
-        </div>
-
-        <div>
-          <div className="w-full h-fit">
-            {data.map((data, i) => (
-              <div
-                key={i}
-                className="flex border-t pt-[12px] border-[#EDF2F6] justify-between mt-[33px] "
-              >
-                <div className="flex items-center w-[216px] gap-[10px]">
-                  <img src={data.images} alt="avatar" />
-                  <span className="block text-[16px]  h-[] font-medium text-[#3A3F51] font-PlusJakarta">
-                    {data.name}
-                  </span>
-                </div>
-                <span className="block text-[16px] w-[116px] font-medium text-[#9CA4AB] font-PlusJakarta">
-                  {data.date}
-                </span>
-                <span className="block text-[16px] font-medium w-[120px] text-[#0D062D)] font-PlusJakarta">
-                  {data.amount}
-                </span>
-                <span
-                  className={`${
-                    data.status == "Paid" ? "text-[#34CAA5]" : "text-[#ED544E]"
-                  } block text-[16px] font-medium w-[95px]  font-PlusJakarta`}
+          <div>
+            <div className="w-[800px] h-fit">
+              {data.map((data, i) => (
+                <div
+                  key={i}
+                  className="flex border-t pt-[12px] border-[#EDF2F6] justify-between mt-[33px] "
                 >
-                  {data.status}
-                </span>
-                <div className=" w-[80px] flex gap-[3px] items-center">
-                  <ViewIcon />
-                  <p className="text-[#0D062D] text-[16px] font-PlusJakarta font-medium">
-                    {data.invoice}
-                  </p>
+                  <div className="flex items-center w-[216px] gap-[10px]">
+                    <img src={data.images} alt="avatar" />
+                    <span className="block text-[16px]  h-[] font-medium text-[#3A3F51] font-PlusJakarta">
+                      {data.name}
+                    </span>
+                  </div>
+                  <span className="block text-[16px] w-[116px] font-medium text-[#9CA4AB] font-PlusJakarta">
+                    {data.date}
+                  </span>
+                  <span className="block text-[16px] font-medium w-[120px] text-[#0D062D)] font-PlusJakarta">
+                    {data.amount}
+                  </span>
+                  <span
+                    className={`${
+                      data.status == "Paid"
+                        ? "text-[#34CAA5]"
+                        : "text-[#ED544E]"
+                    } block text-[16px] font-medium w-[95px]  font-PlusJakarta`}
+                  >
+                    {data.status}
+                  </span>
+                  <div className=" w-[80px] flex gap-[3px] items-center">
+                    <ViewIcon />
+                    <p className="text-[#0D062D] text-[16px] font-PlusJakarta font-medium">
+                      {data.invoice}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

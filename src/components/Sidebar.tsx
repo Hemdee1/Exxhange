@@ -2,28 +2,28 @@ import { useState } from "react";
 import {
   ArrowRightIcon,
   BoxIcon,
-  BrightnessIcon,
   CategoryIcon,
   DiscountIcon,
   LogoIcon,
   LogoutIcon,
-  MoonIcon,
   ProfileIcon,
   SettingIcon,
   SideIcon,
   TrendUpIcon,
 } from "../assets/Icons";
 import Theme from "../utils/Theme";
+import { useOutsideClick } from "../utils/UseOutsideClick";
 
 export default function Sidebar() {
   const [select, setSelect] = useState(1);
   const [sidebarVisibility, setSidebarVisibility] = useState(false);
-
+  const ref = useOutsideClick(() => setSidebarVisibility(false));
   return (
     <div
+      ref={ref}
       className={`${
         sidebarVisibility === true ? "left-0" : "-left-[70px]"
-      } fixed sm:left-0 top-0 z-20 `}
+      } fixed sm:left-0 top-0 z-20 transition-all duration-500 `}
     >
       <div className="h-screen w-[80px] py-[20px]  bg-[#F7F8FA] border-r border-[#E5EAEF] flex flex-col justify-between">
         <div className="flex  flex-col gap-[32px]  justify-center items-center">
@@ -56,9 +56,13 @@ export default function Sidebar() {
             >
               <TrendUpIcon />
             </button>
-            <div>
+            <button
+              onClick={() => {
+                setSidebarVisibility((prev) => !prev);
+              }}
+            >
               <SideIcon color={`${select == 2 ? "#0D062D" : "#F7F8FA"}`} />
-            </div>
+            </button>
           </div>
 
           <div className="flex justify-end gap-[24px] w-full">
@@ -69,9 +73,13 @@ export default function Sidebar() {
             >
               <ProfileIcon />
             </button>
-            <div>
+            <button
+              onClick={() => {
+                setSidebarVisibility((prev) => !prev);
+              }}
+            >
               <SideIcon color={`${select == 3 ? "#0D062D" : "#F7F8FA"}`} />
-            </div>
+            </button>
           </div>
 
           <div className="flex justify-end gap-[24px] w-full">
@@ -82,9 +90,13 @@ export default function Sidebar() {
             >
               <BoxIcon />
             </button>
-            <div>
+            <button
+              onClick={() => {
+                setSidebarVisibility((prev) => !prev);
+              }}
+            >
               <SideIcon color={`${select == 4 ? "#0D062D" : "#F7F8FA"}`} />
-            </div>
+            </button>
           </div>
 
           <div className="flex justify-end gap-[24px] w-full">
@@ -95,9 +107,13 @@ export default function Sidebar() {
             >
               <DiscountIcon />
             </button>
-            <div>
+            <button
+              onClick={() => {
+                setSidebarVisibility((prev) => !prev);
+              }}
+            >
               <SideIcon color={`${select == 5 ? "#0D062D" : "#F7F8FA"}`} />
-            </div>
+            </button>
           </div>
 
           <button
