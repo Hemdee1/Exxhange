@@ -46,7 +46,7 @@ export default function LastOrder() {
   ];
   return (
     <div>
-      <div className="w-full h-fit pb-[31px] px-[20px]  border border-[#EDF2F7] bg-white rounded-[14px]">
+      <div className="sm:w-full w-[800px] h-fit pb-[31px] px-[20px]  border border-[#EDF2F7] bg-white rounded-[14px]">
         <div className=" flex justify-between mt-[18px] ">
           <span className="block text-[18px] font-semibold text-[#26282C] font-PlusJakarta">
             Last Orders

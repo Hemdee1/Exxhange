@@ -17,10 +17,16 @@ import Theme from "../utils/Theme";
 
 export default function Sidebar() {
   const [select, setSelect] = useState(1);
+  const [sidebarVisibility, setSidebarVisibility] = useState(false);
+
   return (
-    <div className="fixed left-0 top-0 z-20">
-      <div className="h-screen w-[80px] mt-[20px] bg-[#F7F8FA] border-r border-[#E5EAEF] flex flex-col justify-between">
-        <div className="flex flex-col gap-[32px] justify-center items-center">
+    <div
+      className={`${
+        sidebarVisibility === true ? "left-0" : "-left-[70px]"
+      } fixed sm:left-0 top-0 z-20 `}
+    >
+      <div className="h-screen w-[80px] py-[20px]  bg-[#F7F8FA] border-r border-[#E5EAEF] flex flex-col justify-between">
+        <div className="flex  flex-col gap-[32px]  justify-center items-center">
           <button>
             <LogoIcon />
           </button>
@@ -33,9 +39,13 @@ export default function Sidebar() {
             >
               <CategoryIcon />
             </button>
-            <div>
+            <button
+              onClick={() => {
+                setSidebarVisibility((prev) => !prev);
+              }}
+            >
               <SideIcon color={`${select == 1 ? "#0D062D" : "#F7F8FA"}`} />
-            </div>
+            </button>
           </div>
 
           <div className="flex justify-end gap-[24px] w-full">

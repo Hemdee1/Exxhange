@@ -21,7 +21,7 @@ export default function Calendar() {
   const year = date.getFullYear();
 
   return (
-    <div>
+    <div className="lg:w-[161px] w-[90px]">
       <div className="flex gap-[10px] items-center">
         <button>
           <CalendarIcon />
