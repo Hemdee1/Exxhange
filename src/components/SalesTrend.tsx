@@ -49,8 +49,8 @@ export default function SalesTrend() {
           </div>
         </div>
       </div>
-      <div className="overflow-x-scroll scrollbar-hide">
-        <div className="h-[255px] w-[800px]  flex flex-col justify-between relative">
+      <div className="overflow-x-scroll w-full scrollbar-hide">
+        <div className="h-[255px] w-[800px] sm:w-full  flex flex-col justify-between relative">
           {YAxis.map((data, i) => (
             <div key={i} className="flex gap-[23px] items-center">
               <p className="text-[12px] font-semibold text-[#B7B0B0] font-PlusJakarta">
