@@ -31,7 +31,7 @@ export default function Dashboard() {
             <div className="overflow-x-scroll scrollbar-hide sm:overflow-x-auto w-full">
               <LastOrder />
             </div>
-            <div className="min-w-[400px] min-[1100px]:min-w-[500px]">
+            <div className="sm:min-w-[400px] min-[1100px]:min-w-[492px]">
               <TopPlatforms />
             </div>
           </div>
