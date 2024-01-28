@@ -48,7 +48,7 @@ export default function SalesTrend() {
             </p>
             <button
               onClick={() => {
-                setOpenDropdown(true);
+                setOpenDropdown((prev) => !prev);
               }}
             >
               <DropDownIcon />

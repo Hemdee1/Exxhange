@@ -30,7 +30,7 @@ export default function Sidebar() {
   return (
     <>
       <div
-        className={`fixed h-screen inset-0 w-full backdrop-blur-[2px] z-10 transition-opacity duration-500 ${
+        className={`fixed h-screen inset-0 w-full backdrop-blur-[2px] z-20 transition-opacity duration-500 ${
           sidebarVisibility ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       ></div>
