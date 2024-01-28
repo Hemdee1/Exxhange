@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { DropDownIcon } from "../assets/Icons";
 import Marker from "../utils/Marker";
 
 export default function SalesTrend() {
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const [sortBy, setSortBy] = useState("Weekly");
   const YAxis = [
     "60.000",
     "50.000",
@@ -30,7 +33,7 @@ export default function SalesTrend() {
   const getHeight = (value: number) => {
     return (value / 60) * 100;
   };
-
+  const sort = ["Daily", "Weekly", "Monthly"];
   return (
     <div className="sm:w-full   h-[374px] bg-white border  border-[#EDF2F7] px-[20px] rounded-[14px] ">
       <div className="mt-[21.5px] flex justify-between">
@@ -39,13 +42,39 @@ export default function SalesTrend() {
         </p>
         <div className="flex items-center gap-[10px]">
           <p className="text-[14px] font-normal text-[#3A3F51]">Sort by : </p>
-          <div className="w-[96px] h-[32px] flex items-center justify-center gap-[10px] border border-[#E1DFDF] rounded-[20px]">
+          <div className="w-[96px] h-[32px] relative flex items-center justify-center gap-[10px] border border-[#E1DFDF] rounded-[20px]">
             <p className="text-[12px] font-normal text-[#3A3F51] font-PlusJakarta">
-              Weekly
+              {sortBy}
             </p>
-            <button>
+            <button
+              onClick={() => {
+                setOpenDropdown(true);
+              }}
+            >
               <DropDownIcon />
             </button>
+            <div
+              className={`absolute right-0 z-10 w-[96px] bg-white shadow border  border-[#DADDD] rounded-lg transition-all duration-500 ${
+                openDropdown
+                  ? "top-[40px] opacity-100 visible"
+                  : "top-[20px] opacity-0 invisible"
+              }`}
+            >
+              <div className="w-full text-xs  divide-y-2">
+                {sort.map((l, i) => (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      setSortBy(l);
+                      setOpenDropdown(false);
+                    }}
+                    className="px-5 py-2 w-full transition-color duration-500 hover:bg-gray-100 bg-transparent"
+                  >
+                    {l}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
