@@ -13,9 +13,11 @@ function App() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { Formik } = formik;
   const [response, setResponse] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   const request = async (values: schema) => {
     if (!(values.ammount && values.fromCurrency && values.toCurrency)) return;
+    setLoading(true);
 
     try {
       const response1 = await axios.post(
@@ -30,12 +32,13 @@ function App() {
     } catch (error) {
       console.error("Error:", error);
     }
+    setLoading(false);
   };
 
   return (
     <div className="w-screen h-screen">
-      <div className="flex items-center justify-center h-screen">
-        <Card style={{ width: "50rem" }} bg="light">
+      <div className="flex items-center justify-center h-screen px-3 sm:px-5">
+        <Card className="w-[50rem] max-w-full" bg="light">
           <Card.Body>
             <Card.Title className="text-[100px]">Currency converter</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">
@@ -58,21 +61,21 @@ function App() {
             >
               {({ handleSubmit, handleChange, values }) => (
                 <Form
-                  className="w-[800px] flex justify-center items-center gap-2 mb-7"
+                  className="w-[800px] max-w-full flex-wrap flex justify-center items-center gap-4 my-10"
                   noValidate
                   onSubmit={handleSubmit}
                 >
-                  <div className="h-[50px] w-[300px] flex items-center border border-black rounded-[4px] mt-[32px]">
+                  <div className="h-[50px] w-[300px] max-w-full flex items-center border border-black rounded-[4px]">
                     <Form.Control
                       name="ammount"
-                      style={{ width: "12rem" }}
+                      className="w-[12rem] max-w-full"
                       required
                       type="number"
                       value={values.ammount}
                       onChange={handleChange}
                     ></Form.Control>
                     <Form.Select
-                      style={{ width: "6rem" }}
+                      className="w-[6rem] max-w-full"
                       name="fromCurrency"
                       value={values.fromCurrency}
                       onChange={handleChange}
@@ -83,7 +86,7 @@ function App() {
                       <option value="JPY">JPY</option>
                     </Form.Select>
                   </div>
-                  <div className="h-[50px] w-[300px] flex items-center border border-black rounded-[4px] mt-[32px]">
+                  <div className="h-[50px] w-[300px] max-w-full flex items-center border border-black rounded-[4px]">
                     <span className="block h-[40px] w-[15rem] bg-gray-300 text-[20px] text-center">
                       {response}
                     </span>
@@ -103,10 +106,10 @@ function App() {
                   <Button
                     variant="secondary"
                     style={{ width: "6rem", height: "3rem" }}
-                    className="mt-[27px]"
+                    className=""
                     type="submit"
                   >
-                    convert
+                    {loading ? <span className="loader"></span> : "convert"}
                   </Button>
                 </Form>
               )}
