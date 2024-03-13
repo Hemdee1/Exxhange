@@ -12,27 +12,20 @@ interface schema {
 function App() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { Formik } = formik;
-  const [response, setResponse] = useState(1233);
+  const [response, setResponse] = useState(0);
 
   const request = async (values: schema) => {
-    console.log(values);
-    const jsonData = JSON.stringify(values);
-    console.log(jsonData);
-
-    axios.defaults.headers.post["Content-Type"] = "multipart/form-data";
+    if (!(values.ammount && values.fromCurrency && values.toCurrency)) return;
 
     try {
       const response1 = await axios.post(
-        "http://localhost:5000/convert/",
-        jsonData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
+        "https://fxexchange-solution.onrender.com/convert",
+        values
       );
 
-      setResponse(response1.data);
+      const data = response1.data?.toFixed(3);
+
+      setResponse(data);
       console.log(response1);
     } catch (error) {
       console.error("Error:", error);
@@ -40,8 +33,8 @@ function App() {
   };
 
   return (
-    <div className="h-screen w-screen">
-      <div className="flex justify-center h-screen items-center">
+    <div className="w-screen h-screen">
+      <div className="flex items-center justify-center h-screen">
         <Card style={{ width: "50rem" }} bg="light">
           <Card.Body>
             <Card.Title className="text-[100px]">Currency converter</Card.Title>
@@ -69,10 +62,9 @@ function App() {
                   noValidate
                   onSubmit={handleSubmit}
                 >
-                  {" "}
                   <div className="h-[50px] w-[300px] flex items-center border border-black rounded-[4px] mt-[32px]">
                     <Form.Control
-                      name="amount"
+                      name="ammount"
                       style={{ width: "12rem" }}
                       required
                       type="number"
@@ -115,7 +107,7 @@ function App() {
                     type="submit"
                   >
                     convert
-                  </Button>{" "}
+                  </Button>
                 </Form>
               )}
             </Formik>
